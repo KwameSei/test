@@ -1,0 +1,295 @@
+@import './../../styles/variables.scss';
+
+.header {
+  background: $dark;
+  width: 100%;
+  height: $header-height;
+  transition: $transition;
+
+  &__content {
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    max-width: 1920;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    z-index: $z-index-10;
+
+    &__logo {
+    img {
+      width: 55px;
+      height: 30px;
+
+      @include respond(xs) {
+        width: 45%;
+        height: 20px;
+      }
+
+      @include respond(sm) {
+        width: 55%;
+        height: 30px;
+      }
+
+      @include respond(md) {
+        width: 65%;
+        height: 40px;
+      }
+
+      @include respond(lg) {
+        width: 75%;
+        height: 50px;
+      }
+
+      @include respond(xl) {
+        width: 85%;
+        height: 60px;
+      }
+
+      @include respond(xxl) {
+        width: 95%;
+        height: 70px;
+      }
+    }
+  }
+
+  &__nav {
+    top: 0;
+    right: 100%;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgba($dark, 0.9);
+    transform: translate(0);
+    transition: $transition;
+    backdrop-filter: blur(2px);
+
+    &__list {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+
+      @include respond(md) {
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 0;
+        margin-right: calc(0.5rem + #{$spacing-md});
+      }
+
+      @include respond(lg) {
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 0;
+        margin-right: calc(1rem + #{$spacing-lg});
+      }
+      @include respond(xl) {
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 0;
+        margin-right: calc(1.5rem + #{$spacing-xl});
+      }
+
+      @include respond(xxl) {
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 0;
+        margin-right: calc(2rem + #{$spacing-xxl});
+      }
+
+      &__list_items {
+        color: #fff;
+        padding: 0.75rem 1.25rem;
+        border-radius: $border-radius;
+        transition: $transition;
+        font-weight: 600;
+
+        &:not(:last-child) {  // not last child of list item
+          margin-bottom: 5px;
+
+          @include respond(md) {
+            margin-bottom: 0;
+            margin-right: $spacing-md;
+          }
+        }
+
+        &:hover {
+          background-color: rgba($light, 0.2);
+        }
+
+        &__link {
+          text-decoration: $text-decoration-none;
+          transition: $transition;
+          color: $light;
+
+          &:hover {
+            background-color: rgba($light, 0.2);
+          }
+  
+          &:active {
+            border-radius: calc(#{$border-radius} + 20px);
+            background: linear-gradient(
+              to right,
+              rgba($primary, 0.8),
+              rgba($secondary, 0.8)
+            );
+          }
+        }
+      }
+    }
+
+    &.isOpen {
+      right: 0;
+      transform: translate(0);
+    }
+
+    @include respond(md) {
+      transform: none;
+      flex-direction: row;
+      background: transparent;
+      width: auto;
+      height: 100%;
+      position: static;
+    }
+
+    @include respond(lg) {
+      transform: none;
+      flex-direction: row;
+      background: transparent;
+      // width: auto;
+      height: 100%;
+      position: static;
+    }
+
+    @include respond(xl) {
+      transform: none;
+      flex-direction: row;
+      background: transparent;
+      width: auto;
+      height: 100%;
+      position: static;
+    }
+
+    @include respond(xxl) {
+      transform: none;
+      flex-direction: row;
+      background: transparent;
+      // width: auto;
+      height: 100%;
+      position: static;
+    }
+  }
+
+  &__toggle { // Hamburger menu icon for mobile
+    position: relative;
+    // top: 1.5rem;
+    right: 1.5rem;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background-color: rgba($light, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: $transition;
+
+    &:hover {
+      background-color: rgba($light, 0.3);
+    }
+
+    &:active {
+      background-color: rgba($light, 0.4);
+    }
+
+    span {
+      position: relative;
+      width: 1.5rem;
+      height: 2px;
+      background-color: $light;
+      transition: $transition;
+
+      &:before,
+      &:after {
+        content: '';
+        position: absolute;
+        width: 1.5rem;
+        height: 2px;
+        background-color: $light;
+        transition: $transition;
+      }
+
+      &:before {
+        top: -0.5rem;
+      }
+
+      &:after {
+        bottom: -0.5rem;
+      }
+    }
+
+    &.isOpen {
+      span {
+        background-color: transparent;
+
+        &:before {
+          top: 0;
+          transform: rotate(45deg);
+        }
+
+        &:after {
+          bottom: 0;
+          transform: rotate(-45deg);
+        }
+      }
+    }
+
+    @include respond(md) {
+      display: none;
+    }
+
+    @include respond(lg) {
+      display: none;
+    }
+
+    @include respond(xl) {
+      display: none;
+    }
+
+    @include respond(xxl) {
+      display: none;
+    }
+  }
+}
+
+  // @include respond(xs) {
+  //   height: $header-height-xs;
+  // }
+
+  // @include respond(sm) {
+  //   height: $header-height-sm;
+  // }
+
+  // @include respond(md) {
+  //   height: $header-height-md;
+  // }
+
+  // @include respond(lg) {
+  //   height: $header-height-lg;
+  // }
+
+  // @include respond(xl) {
+  //   height: $header-height-xl;
+  // }
+  
+  // @include respond(xxl) {
+  //   height: $header-height-xxl;
+  // }
+}
