@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import classes from './AnimatedText.module.scss';
-import { Button } from '@mui/material';
 
 const FADE_INTERVAL_MS = 500;
 const WORD_CHANGE_INTERVAL_MS = FADE_INTERVAL_MS * 2;
