@@ -1,7 +1,7 @@
 @import './../../styles/variables.scss';
 
 .header {
-  background: $dark;
+  background: $light;
   width: 100%;
   height: $header-height;
   transition: $transition;
@@ -10,6 +10,7 @@
     position: relative;
     overflow: hidden;
     margin: 0 auto;
+    margin-top: 2rem;
     max-width: 1920;
     height: 100%;
     display: flex;
@@ -20,37 +21,37 @@
 
     &__logo {
     img {
-      width: 55px;
-      height: 30px;
+        // width: 55px;
+        // height: 30px;
 
       @include respond(xs) {
-        width: 45%;
-        height: 20px;
+        width: 100%;
+        height: 30px;
       }
 
       @include respond(sm) {
-        width: 55%;
+        width: 100%;
         height: 30px;
       }
 
       @include respond(md) {
-        width: 65%;
-        height: 40px;
+        width: 100%;
+        height: 30px;
       }
 
       @include respond(lg) {
-        width: 75%;
-        height: 50px;
+        width: 100%;
+        height: 30px;
       }
 
       @include respond(xl) {
-        width: 85%;
-        height: 60px;
+        width: 100%;
+        height: 30px;
       }
 
       @include respond(xxl) {
-        width: 95%;
-        height: 70px;
+        width: 100%;
+        height: 30px;
       }
     }
   }
@@ -105,7 +106,7 @@
       }
 
       &__list_items {
-        color: #fff;
+        color: $pink;
         padding: 0.75rem 1.25rem;
         border-radius: $border-radius;
         transition: $transition;
@@ -127,7 +128,7 @@
         &__link {
           text-decoration: $text-decoration-none;
           transition: $transition;
-          color: $light;
+          color: $pink;
 
           &:hover {
             background-color: rgba($light, 0.2);
