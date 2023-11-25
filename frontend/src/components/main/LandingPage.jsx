@@ -1,8 +1,11 @@
-import React from 'react'
+import React from 'react';
+import { AnimatedText } from '../../components';
 
 const LandingPage = () => {
   return (
-    <div>LandingPage</div>
+    <div>
+      <AnimatedText />
+    </div>
   )
 }
 

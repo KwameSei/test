@@ -46,12 +46,18 @@ const Header = () => {
         <Link to='/' className={classes.header__content__logo}>
           <img src={logo} alt='logo' />
         </Link>
-        <nav className={`${classes.header__content__nav} ${showMenu ? classes.isOpen : ''}`}>
+        <nav className={`${classes.header__content__nav} ${showMenu && size.width < 768 ? classes.isOpen : ''}`}>
           <ul className={classes.header__content__nav__list}>
             {HeaderLinks.map((item, index) => {
               return (
                 <li key={index} className={classes.header__content__nav__list__list_items}>
-                  <Link to={item.path} className={classes.header__content__nav__list__list_items__link}>{item.name}</Link>
+                  <Link 
+                    to={item.path} 
+                    className={classes.header__content__nav__list__list_items__link}
+                    onClick={closeMenuHandler}
+                  >
+                      {item.name}
+                  </Link>
                 </li>
               )
             })}

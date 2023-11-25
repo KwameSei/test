@@ -1,0 +1,124 @@
+@import '../../styles/variables.scss';
+
+// .fade-in {
+//   transition: opacity 1.5s ease;
+// }
+
+// fade-out {
+//   opacity: 0;
+//   transition: opacity 1.5s ease;
+// }
+
+.animate {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 auto;
+  margin-top: 7rem;
+
+  &__header {
+    font-size: 2rem;
+    font-weight: $font-weight-bold;
+    font-family: $raleway;
+    color: $light-blue;
+  }
+
+  &__text {
+    display: inline-block;
+    font-size: 4rem;
+    font-weight: $font-weight-boldest;
+    font-family: $montserrat;
+    color: $blue;
+
+    span {
+      font-family: $montserrat;
+    }
+  }
+
+  &__request_demo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__circle {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: $gold;
+      margin-left: 20px;
+      margin-right: -28px;
+    }
+
+    &__text {
+      font-size: 1.3rem;
+      font-weight: $font-weight-bold;
+      font-family: $rubik;
+      color: $pink;
+    }
+
+    &__btn_con {
+      
+      &__btn {
+        font-size: 1rem;
+        font-weight: $font-weight-boldest;
+        font-family: $Roboto;
+        color: $light;
+        border: 2px solid $pink;
+        border-radius: 5px;
+        padding: 1rem 1.5rem;
+        margin-left: 1rem;
+        cursor: pointer;
+        transition: $transition;
+        background-color: $pink;
+        box-shadow: $shadow-pink;
+
+        &:hover {
+          background-color: $pink;
+          color: $light;
+        }
+      }
+    }
+  }
+}
+
+// @keyframes fade-in {
+//   0% {
+//     opacity: 0;
+//   }
+//   50% {
+//     opacity: 1;
+//   }
+//   100% {
+//     opacity: 0;
+//   }
+// }
+
+// @keyframes fade-out {
+//   0% {
+//     opacity: 1;
+//   }
+//   50% {
+//     opacity: 0;
+//   }
+//   100% {
+//     opacity: 1;
+//   }
+// }
+
+// // .animate__text {
+// //   display: inline-block;
+// // }
+
+// .fade {
+//   // animation-duration: 3s;
+//   animation-iteration-count: infinite;
+// }
+
+// .odd {
+//   animation-name: fade-in;
+// }
+
+// .even {
+//   animation-name: fade-out;
+// }
