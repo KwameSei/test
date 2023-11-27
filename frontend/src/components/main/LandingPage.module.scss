@@ -1,0 +1,82 @@
+@import '../../styles/variables.scss';
+
+.home {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  // overflow-x: hidden;
+  
+  &__circle1 {
+    // position: absolute;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: rgba($light-blue, 0.2);
+    // margin-left: 20px;
+    // margin-right: -28px;
+    margin-left: -60%;
+    top: 0;
+    z-index: 100;
+    // animation: moveCircle1 5s linear infinite alternate;
+    animation: moveCircle1 5s linear infinite alternate, reverseCircle1 5s linear infinite alternate 5s;
+
+    @keyframes moveCircle1 {
+      from {
+        transform: translateX(0) translateY(200px);
+      }
+      to {
+        transform: translateX(200px) translateY(0);
+      }
+    }
+  }
+
+  &__circle2 {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: rgba($pink, 0.2);
+    left: 0;
+    top: 45%;
+    // animation: moveCircle2 5s linear infinite alternate;
+    animation: moveCircle2 5s linear infinite alternate, reverseCircle2 5s linear infinite alternate 5s;
+
+    @keyframes moveCircle2 {
+      from {
+        transform: translateX(200px) translateY(0);
+      }
+      to {
+        transform: translateX(0) translateY(200px);
+      }
+    }
+  }
+
+  &__effect {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 55rem;
+    height: 55rem;
+    border-radius: 50%;
+    background-color: $pink;
+    z-index: -1;
+    overflow: hidden;
+    margin-left: 50%;
+    clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
+    transform: translateX(50%);
+
+    &__circle {
+      width: 25rem;
+      height: 25rem;
+      border-radius: 50%;
+      // margin: 0 auto;
+      position: inline-block;
+      background-color: $light;
+
+    }
+  }
+}

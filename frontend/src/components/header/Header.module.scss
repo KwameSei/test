@@ -1,25 +1,33 @@
 @import './../../styles/variables.scss';
 
 .header {
-  background: $light;
+  position: fixed;
+  background: rgba($grey, 0.0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: $header-height;
   transition: $transition;
+  z-index: 0;
 
   &__content {
     position: relative;
     overflow: hidden;
-    margin: 0 auto;
-    margin-top: 2rem;
-    max-width: 1920;
+    // margin: 0 auto;
+    // margin-top: 2rem;
+    width: 100%;
+    // max-width: 1920px;
     height: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 1rem;
-    z-index: $z-index-10;
+    // z-index: $z-index-10;
 
     &__logo {
+      position: relative;
+      margin-left: 0;
     img {
         // width: 55px;
         // height: 30px;
@@ -57,16 +65,14 @@
   }
 
   &__nav {
-    top: 0;
-    right: 100%;
-    width: 100%;
-    height: 100vh;
-    position: fixed;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
+    font-size: 20px;
+    font-weight: 400;
     background-color: rgba($dark, 0.9);
     transform: translate(0);
     transition: $transition;

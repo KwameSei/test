@@ -1,10 +1,17 @@
 import React from 'react';
-import { AnimatedText } from '../../components';
+import { AnimatedText, Footer } from '../../components';
+import classes from './LandingPage.module.scss';
 
 const LandingPage = () => {
   return (
-    <div>
+    <div className={classes.home}>
+      <div className={classes.home__circle1}></div>
+      <div className={classes.home__circle2}></div>
+      <div className={classes.home__effect}>
+        <div className={classes.home__effect__circle}></div>
+      </div>
       <AnimatedText />
+      {/* <Footer /> */}
     </div>
   )
 }
