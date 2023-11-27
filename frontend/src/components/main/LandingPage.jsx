@@ -10,6 +10,9 @@ const LandingPage = () => {
       <div className={classes.home__effect}>
         <div className={classes.home__effect__circle}></div>
       </div>
+      <div className={classes.home__effect2}>
+        <div className={classes.home__effect2__circle3}></div>
+      </div>
       <AnimatedText />
       {/* <Footer /> */}
     </div>
